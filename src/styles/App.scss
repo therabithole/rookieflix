@@ -1,0 +1,765 @@
+@import "./theme/appBorder";
+@import "./theme/logo";
+@import "./theme/elements";
+@import "./theme/grids";
+@import "./theme/images";
+@import "./theme//menu-and-navigation";
+
+@mixin reelImg {
+ background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+  url("../assets/images/reel.jpg");
+
+ object-fit: cover;
+ width: 100%;
+}
+
+// EXTRA SMALL SCREENS
+
+@media (max-width: 575px) {
+ .react-app {
+  @include appBorder(purple);
+  @include mainGridPC;
+  @include menuandnav;
+  @include headingSize(5vw);
+  @include appColor(black);
+  head
+
+  .header {
+   grid-area: rookie;
+   @include headerGrid;
+   img {
+    @include control-logo(40%);
+   }
+
+   button {
+    grid-area: login-button;
+    @include controlButton(15vw, 7vh, 0.5vw);
+    @include buttonColor;
+   }
+  }
+
+  .content {
+   grid-area: content;
+
+   &.home {
+    @include contentGridHome;
+    .reel {
+     grid-area: reel;
+     @include reelImg;
+     @include controlWidth;
+     @include reelGrid;
+
+     h1 {
+      grid-area: reel-heading;
+      @include bigHeading;
+      @include white;
+      @include selfCenter;
+     }
+     h2 {
+      grid-area: reel-sub;
+      @include white;
+      @include thinHeading;
+      @include selfCenter;
+      text-align: center;
+
+      @include selfCenter;
+      text-align: center;
+     }
+     button {
+      grid-area: reel-join;
+      @include selfCenter;
+      @include controlButton(10vw, 6vh, 30vw);
+     }
+    }
+    .features {
+      grid-area: features;
+      @include featuresGridB;
+      
+     
+      
+      .high-quality {
+       grid-area: high-quality;
+       @include selfCenter;
+       
+       @include innerFeatures;
+       
+       figcaption {
+          
+          @include figCaptionGrid;
+          text-align: center;
+         
+       }
+       
+      }
+      .users {
+       grid-area: users;
+      
+       @include innerFeatures;
+       ;
+       figure {
+          
+       }
+       figcaption {
+          
+          @include figCaptionGrid;
+          text-align: center;
+         
+       }
+      }
+      .discover {
+       grid-area: discover;
+      
+       @include innerFeatures;
+       ;
+       figure {
+          
+       }
+       figcaption {
+          
+          @include figCaptionGrid;
+          text-align: center;
+         
+       }
+      }
+     }
+     .teasers {
+      grid-area: teasers;
+      @include teaserGrid;
+      .teaser_freedom {
+         grid-area: teaser_freedom;
+         @include freedomGrid;
+         article {
+            grid-area: freedom_txt;
+         }
+         img {
+          grid-area: freedom_img;
+         }
+         
+      }
+      .teaser_uncommit {
+         grid-area: teaser_uncommit;
+         @include uncommitGrid;
+         article {
+            grid-area: uncommit_txt;
+         }
+         img {
+            border: 2px solid green;
+            grid-area: uncommit_img;
+         }
+      }
+     }
+   }
+  }
+
+  .footer {
+   grid-area: footer;
+  }
+ }
+}
+
+// Small devices (landscape phones, 576px and up)
+@media (min-width: 576px) {
+ .react-app {
+  @include appColor(black);
+  @include headingSize(5vw);
+  @include appBorder(tomato);
+  @include mainGridPC;
+  @include menuandnav;
+
+  .menu-and-navigation {
+   grid-area: rookie;
+   grid-column: 2/3;
+   grid-row: 1/3;
+   z-index: 11;
+  }
+
+  .header {
+   grid-area: rookie;
+   @include headerGrid;
+
+   img {
+    @include control-logo(40%);
+   }
+
+   button {
+    @include controlButton(10vw, 6vh, 0.5vw);
+    @include buttonColor;
+    grid-area: login-button;
+   }
+  }
+
+  .content {
+   grid-area: content;
+
+   &.home {
+    @include contentGridHome;
+
+    .reel {
+     grid-area: reel;
+     @include reelImg;
+     @include controlWidth;
+     @include reelGrid;
+
+     h1 {
+      grid-area: reel-heading;
+      @include white;
+      @include selfCenter;
+     }
+     h2 {
+      grid-area: reel-sub;
+      @include thinHeading;
+      @include selfCenter;
+      text-align: center;
+     }
+     button {
+      grid-area: reel-join;
+      @include selfCenter;
+      @include controlButton(20vw, 15vh, 30vw);
+     }
+    }
+    .features {
+     grid-area: features;
+     @include featuresGridB;
+     
+    
+     
+     .high-quality {
+      grid-area: high-quality;
+      @include selfCenter;
+      
+      @include innerFeatures;
+      figure {
+         
+      }
+      figcaption {
+         
+         @include figCaptionGrid;
+         text-align: center;
+        
+      }
+      
+     }
+     .users {
+      grid-area: users;
+     
+      @include innerFeatures;
+      ;
+      figure {
+         
+      }
+      figcaption {
+         
+         @include figCaptionGrid;
+         text-align: center;
+        
+      }
+     }
+     .discover {
+      grid-area: discover;
+     
+      @include innerFeatures;
+      ;
+      figure {
+         
+      }
+      figcaption {
+         
+         @include figCaptionGrid;
+         text-align: center;
+        
+      }
+     }
+    }
+    .teasers {
+      grid-area: teasers;
+      @include teaserGrid;
+      .teaser_freedom {
+         grid-area: teaser_freedom;
+         @include freedomGrid;
+         article {
+            grid-area: freedom_txt;
+         }
+         img {
+          grid-area: freedom_img;
+         }
+         
+      }
+      .teaser_uncommit {
+         grid-area: teaser_uncommit;
+         @include uncommitGrid;
+         article {
+            grid-area: uncommit_txt;
+         }
+         img {
+            border: 2px solid green;
+            grid-area: uncommit_img;
+         }
+      }
+     }
+   }
+  }
+
+  .footer {
+   grid-area: footer;
+  }
+ }
+}
+
+// Medium devices (tablets, 768px and up)
+@media (min-width: 768px) {
+ .react-app {
+  @include appBorder(pink);
+  @include mainGridPC;
+  @include menuandnav;
+
+  .header {
+   grid-area: rookie;
+   @include headerGrid;
+
+   img {
+    @include control-logo(40%);
+    grid-area: logo;
+   }
+
+   button {
+    @include controlButton(8vw, 8vh, 0.5vw);
+    @include buttonColor;
+    grid-area: login-button;
+   }
+  }
+
+  .content {
+   grid-area: content;
+
+   &.home {
+    @include contentGridHome;
+
+    .reel {
+     grid-area: reel;
+     @include reelImg;
+     @include controlWidth;
+     @include reelGrid;
+
+     h1 {
+      grid-area: reel-heading;
+      @include white;
+      @include selfCenter;
+     }
+     h2 {
+      grid-area: reel-sub;
+      @include thinHeading;
+      text-align: center;
+     }
+     button {
+      grid-area: reel-join;
+      @include selfCenter;
+      @include controlButton(20vw, 18vh, 30vw);
+     }
+    }
+    .features {
+      grid-area: features;
+      @include featuresGridA;
+ 
+      .high-quality {
+       grid-area: high-quality;
+       @include innerFeatures;
+ 
+       figure {
+        @include selfCenter;
+      
+       }
+       figcaption {
+      
+        @include selfCenter;
+        @include figCaptionGrid;
+        h3 {
+         grid-area: fig-title;
+        }
+        p {
+         grid-area: fig-paragraph;
+         text-align: center;
+        }
+       }
+      }
+      .users {
+       grid-area: users;
+       @include innerFeatures;
+       @include selfCenter;
+       figure {
+        @include selfCenter;
+       
+       }
+       figcaption {
+      
+        @include selfCenter;
+        @include figCaptionGrid;
+        h3 {
+         grid-area: fig-title;
+        }
+        p {
+         grid-area: fig-paragraph;
+         text-align: center;
+        }
+       }
+      }
+      .discover {
+       grid-area: discover;
+       @include innerFeatures;
+       @include selfCenter;
+       figure {
+        @include selfCenter;
+       
+       }
+       figcaption {
+      
+        @include selfCenter;
+        @include figCaptionGrid;
+        h3 {
+         grid-area: fig-title;
+        }
+        p {
+         grid-area: fig-paragraph;
+         text-align: center;
+        }
+       }
+      }
+     }
+     .teasers {
+      grid-area: teasers;
+      @include teaserGrid;
+      .teaser_freedom {
+     grid-area: teaser_freedom;
+      }
+      .teaser_uncommit {
+   
+         grid-area: teaser_uncommit;
+      }
+     }
+   }
+  }
+ }
+
+ .footer {
+  grid-area: footer;
+ }
+}
+
+// Large devices (desktops, 992px and up)
+@media (min-width: 992px) {
+ .react-app {
+  @include mainGridPC;
+  @include appBorder(gold);
+
+  @include menuandnav;
+
+  .header {
+   grid-area: rookie;
+   @include headerGrid;
+
+   img {
+    @include control-logo(40%);
+   }
+
+   button {
+    @include controlButton(8vw, 8vh, 0.5vw);
+    @include buttonColor;
+    grid-area: login-button;
+   }
+  }
+
+  .content {
+   grid-area: content;
+
+   &.home {
+    @include contentGridHome;
+
+    .reel {
+     grid-area: reel;
+     @include reelImg;
+     @include controlWidth;
+     @include reelGrid;
+     h1 {
+      grid-area: reel-heading;
+      @include bigHeading;
+      @include white;
+      @include selfCenter;
+     }
+     h2 {
+      grid-area: reel-sub;
+      @include thinHeading;
+      text-align: center;
+     }
+     button {
+      @include controlButton(20vw, 15vh, 30vw);
+     }
+    }
+    .features {
+      grid-area: features;
+      @include featuresGridA;
+ 
+      .high-quality {
+       grid-area: high-quality;
+       @include innerFeatures;
+ 
+       figure {
+        @include selfCenter;
+      
+       }
+       figcaption {
+      
+        @include selfCenter;
+        @include figCaptionGrid;
+        h3 {
+         grid-area: fig-title;
+        }
+        p {
+         grid-area: fig-paragraph;
+         text-align: center;
+        }
+       }
+      }
+      .users {
+       grid-area: users;
+       @include innerFeatures;
+       @include selfCenter;
+       figure {
+        @include selfCenter;
+       
+       }
+       figcaption {
+      
+        @include selfCenter;
+        @include figCaptionGrid;
+        h3 {
+         grid-area: fig-title;
+        }
+        p {
+         grid-area: fig-paragraph;
+         text-align: center;
+        }
+       }
+      }
+      .discover {
+       grid-area: discover;
+       @include innerFeatures;
+       @include selfCenter;
+       figure {
+        @include selfCenter;
+       
+       }
+       figcaption {
+      
+        @include selfCenter;
+        @include figCaptionGrid;
+        h3 {
+         grid-area: fig-title;
+        }
+        p {
+         grid-area: fig-paragraph;
+         text-align: center;
+        }
+       }
+      }
+     }
+     .teasers {
+      grid-area: teasers;
+      @include teaserGrid;
+      .teaser_freedom {
+         grid-area: teaser_freedom;
+         @include freedomGrid;
+         
+         article {
+            grid-area: freedom_txt;
+            @include teaserTitles;
+            small {grid-area: small;}
+            h3 {grid-area: offer; }
+            p {grid-area: snippet};
+         }
+         img {
+          grid-area: freedom_img;
+         }
+         
+      }
+      .teaser_uncommit {
+         grid-area: teaser_uncommit;
+         @include uncommitGrid;
+         article {
+            grid-area: uncommit_txt;
+            @include teaserTitles;
+            small {grid-area: small;}
+            h3 {grid-area: offer; }
+            p {grid-area: snippet};
+            
+         }
+         img {
+            border: 2px solid green;
+            grid-area: uncommit_img;
+         }
+      }
+     }
+   }
+  }
+
+  .footer {
+   grid-area: footer;
+  }
+ }
+}
+
+// Extra large devices (large desktops, 1200px and up)
+@media (min-width: 1200px) {
+ .react-app {
+  @include appBorder(green);
+  @include mainGridPC;
+  @include menuandnav;
+
+  .header {
+   grid-area: rookie;
+   @include headerGrid;
+
+   img {
+    @include control-logo(40%);
+   }
+
+   button {
+    grid-area: login-button;
+    @include controlButton(8vw, 8vh, 0.5vw, blue);
+    @include buttonColor;
+   }
+  }
+
+  .content {
+   grid-area: content;
+
+   &.home {
+    @include contentGridHome;
+
+    .reel {
+     grid-area: reel;
+     @include reelImg;
+     @include controlWidth;
+     @include reelGrid;
+
+     h1 {
+      grid-area: reel-heading;
+      @include bigHeading;
+      @include white;
+      @include selfCenter;
+     }
+
+     h2 {
+      grid-area: reel-sub;
+      @include thinHeading;
+      @include selfCenter;
+      text-align: center;
+     }
+     button {
+      grid-area: reel-join;
+
+      @include selfCenter;
+      @include controlButton(20vw, 15vh, 30vw);
+     }
+    }
+    .features {
+     grid-area: features;
+     @include featuresGridA;
+
+     .high-quality {
+      grid-area: high-quality;
+      @include innerFeatures;
+
+      figure {
+       @include selfCenter;
+     
+      }
+      figcaption {
+     
+       @include selfCenter;
+       @include figCaptionGrid;
+       h3 {
+        grid-area: fig-title;
+       }
+       p {
+        grid-area: fig-paragraph;
+        text-align: center;
+       }
+      }
+     }
+     .users {
+      grid-area: users;
+      @include innerFeatures;
+      @include selfCenter;
+      figure {
+       @include selfCenter;
+      
+      }
+      figcaption {
+     
+       @include selfCenter;
+       @include figCaptionGrid;
+       h3 {
+        grid-area: fig-title;
+       }
+       p {
+        grid-area: fig-paragraph;
+        text-align: center;
+       }
+      }
+     }
+     .discover {
+      grid-area: discover;
+      @include innerFeatures;
+      @include selfCenter;
+      figure {
+       @include selfCenter;
+      
+      }
+      figcaption {
+     
+       @include selfCenter;
+       @include figCaptionGrid;
+       h3 {
+        grid-area: fig-title;
+       }
+       p {
+        grid-area: fig-paragraph;
+        text-align: center;
+       }
+      }
+     }
+    }
+    .teasers {
+     grid-area: teasers;
+     @include teaserGrid;
+     .teaser_freedom {
+        grid-area: teaser_freedom;
+        @include freedomGrid;
+        article {
+           grid-area: freedom_txt;
+        }
+        img {
+         grid-area: freedom_img;
+        }
+        
+     }
+     .teaser_uncommit {
+        grid-area: teaser_uncommit;
+        @include uncommitGrid;
+        article {
+           grid-area: uncommit_txt;
+        }
+        img {
+           
+           grid-area: uncommit_img;
+        }
+     }
+    }
+   }
+  }
+
+  .footer {
+   grid-area: footer;
+   display: grid;
+  }
+ }
+}

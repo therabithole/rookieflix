@@ -1,0 +1,27 @@
+@mixin burgerandNav {
+           
+            
+    .burger {
+        .line1 { width: 20px; height: 3px; background-color: var(--be-accent-default);}
+            .line2 { width: 20px;  height: 3px; background-color: var(--be-accent-default); transition: transform }
+            .line3 { width: 20px; height: 3px; background-color: var(--be-accent-default) }
+            
+            }
+            .navigation-list {  list-style: none; }
+            .navigation-links {
+                color: var(--be-accent-default);
+                padding: 10px;    
+                display: inline-block; 
+                text-decoration: none; 
+                transition: all 0.5s ;
+                background-size: 600% 200%; 
+                background-image: linear-gradient(to top, var(--be-primary-darker) 50%, white 50%); 
+                
+                font-weight: bold;
+                
+                }
+                    
+            .navigation-links:hover { 
+                background-position: 0 100%;
+                
+                cursor: pointer ; } }

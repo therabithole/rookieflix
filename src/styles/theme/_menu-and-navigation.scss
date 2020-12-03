@@ -1,0 +1,47 @@
+@mixin menuandnav () {
+    .menu-and-navigation 
+       
+    { 
+   //  border: 15px solid green;
+   
+     z-index: 9;
+     grid-column: 2/3;
+     
+     grid-row: 1/3;
+     
+     
+        .burger {
+            
+            display: grid;
+            
+            align-content: center; 
+            grid-row-gap: 2px; // gap between burger lines
+            
+            .line1 { width: 20px; height: 3px; background-color: $color1;}
+            .line2 { width: 20px;  height: 3px; background-color: $color1; transition: transform }
+            .line3 { width: 20px; height: 3px; background-color: $color1; }
+            
+            }
+            .navigation-list {  list-style: none; }
+            .navigation-links {
+                color: blue;
+                padding: 10px;    
+                display: inline-block; 
+                text-decoration: none; 
+                transition: all 0.5s ;
+                background-size: 600% 200%; 
+                background-image: linear-gradient(to top, green 50%, white 50%); 
+                
+                font-weight: bold;
+                
+                }
+                    
+            .navigation-links:hover { 
+                background-position: 0 100%;
+                
+                cursor: pointer ; }
+    } 
+}
+
+
+

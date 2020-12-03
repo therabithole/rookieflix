@@ -1,0 +1,165 @@
+@mixin mainGridPC {
+    display: grid;
+    grid-template-rows: 10vh 10vh 1fr 1fr;
+    grid-template-columns: 40vw auto auto 1fr ;
+    grid-template-areas:
+    "rookie rookie rookie rookie"
+    "rookie rookie rookie rookie"
+    "content content content content"
+    "footer footer footer footer";
+}
+
+@mixin headerGrid {
+    
+    display: grid;
+    grid-template-columns: 2vw 30vw 2fr 2fr 1fr ;
+        grid-template-rows: 1fr;
+        grid-template-areas:
+        ". logo . . login-button";
+        
+    align-items: center;
+        
+}
+
+@mixin footerGrid {
+    display: grid;
+    
+}
+
+@mixin border {
+    border: 2px solid gold;
+}
+
+@mixin contentGridHome {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows:  130vh auto auto;
+    grid-template-areas:
+    "reel"
+    "features"
+    "teasers";
+}
+
+
+@mixin reelGrid{
+    display: grid;
+            
+    justify-content: center;     
+    align-content: center;         
+    grid-template-rows: 10% 15% 10% 25%;    
+             
+            grid-template-columns: 1fr 4fr 1fr;
+            grid-template-areas: 
+            ". . . "
+            ". reel-heading ."
+            ". reel-sub ."
+            ". reel-join . "; 
+}
+
+@mixin featuresGridA {
+    display: grid;
+    grid-template-columns: 1fr 5fr 5fr 5fr 1fr;
+    grid-column-gap: 2vw;
+    grid-template-rows: 80vh;
+    grid-template-areas:
+    ". high-quality users discover .";                    
+    align-items: center;
+    
+    
+}
+
+@mixin featuresGridB {
+    display: grid;
+    grid-row-gap: 5vh;
+    
+    grid-template-columns: 1fr 5fr 1fr;
+    grid-template-rows: 1fr 2fr 2fr 2fr 1fr;
+    grid-template-areas: 
+    ". . ."
+    ". high-quality ."
+    ". users ."
+    ". discover ."
+    ". . ."
+}
+
+
+@mixin innerFeatures {
+    display: grid;
+    
+    grid-template-areas: 
+    "figure"
+    "figcaption";
+    justify-items: center;
+    
+}
+
+@mixin figCaptionGrid {
+    display: grid;
+    grid-row-gap: 2vh;
+    grid-template-areas:
+    "fig-title"
+    "fig-paragraph";
+   
+    justify-items: center;
+}
+
+
+
+
+@mixin teaserGrid {
+    display: grid;
+    
+    grid-template-rows: 5vh 50fr 15fr 50fr 5vh;
+    
+    grid-template-areas: 
+    "."
+    "teaser_freedom"
+    ". "
+    "teaser_uncommit"
+    "."
+  ;
+}
+
+@mixin freedomGrid {
+    display: grid;
+    grid-template-columns: 5fr 30fr 60fr 5fr;
+    grid-column-gap: 10px; 
+    grid-template-areas:
+    ".  freedom_txt freedom_img .";
+    justify-items: center;
+    align-content: center;
+  
+   
+    
+}
+
+
+
+@mixin uncommitGrid {
+    display: grid;
+    grid-template-columns: 5fr 60fr 30fr 5fr;
+  
+    grid-template-areas:
+    ". uncommit_img uncommit_txt .";
+    justify-items: center;
+    align-content: center;
+  
+    
+}
+
+@mixin teaserTitles {
+    display: grid;
+    grid-template-rows: 10fr 10fr 30fr 30fr 20fr ;
+    grid-template-areas:
+    "."
+    "small"
+    "offer"
+    "snippet"
+    "." ;
+    
+}
+
+@mixin selfCenter {
+    justify-self: center;
+    align-self: center;
+}

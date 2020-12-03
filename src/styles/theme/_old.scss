@@ -1,0 +1,318 @@
+.react-app {
+    @extend .appBGColor;
+    
+    display: grid;
+    grid-template-rows:  3vh 10vh 60fr 10fr;    
+    grid-template-columns: 50vw 20vw auto auto ;
+    grid-template-areas:
+    "headerandnav headerandnav headerandnav headerandnav"
+    "headerandnav headerandnav headerandnav headerandnav"
+    "content content content content"
+    "footer footer footer footer";
+    
+    .menu-and-navigation 
+   
+    { 
+     grid-column: 2/3;
+     grid-row: 1/2;
+     z-index: 11;
+   margin-top: 2vh;
+     
+     
+     
+        .burger {
+            
+            display: grid;
+     
+            align-content: center; 
+            grid-row-gap: 2px; // gap between burger lines
+            
+            .line1 { width: 20px; height: 3px; background-color: var(--be-accent-default);}
+            .line2 { width: 20px;  height: 3px; background-color: var(--be-accent-default); transition: transform }
+            .line3 { width: 20px; height: 3px; background-color: var(--be-accent-default) }
+            
+            }
+            .navigation-list {  list-style: none; }
+            .navigation-links {
+                color: var(--be-accent-default);
+                padding: 10px;    
+                display: inline-block; 
+                text-decoration: none; 
+                transition: all 0.5s ;
+                background-size: 600% 200%; 
+                background-image: linear-gradient(to top, var(--be-primary-darker) 50%, white 50%); 
+                
+                font-weight: bold;
+                
+                }
+                    
+            .navigation-links:hover { 
+                background-position: 0 100%;
+                
+                cursor: pointer ; }
+    }
+    
+   
+    .header { 
+
+        grid-area: headerandnav;
+        display: grid;
+        grid-template-columns: 50vw 20vw auto auto ;
+        grid-template-rows: 1fr;
+        grid-template-areas:
+        " logo . . login-button";
+        
+        img {
+            grid-area: logo;
+            width: 40vw;
+            display: grid;
+        justify-self: center;
+            align-self: center;
+        }
+         
+        button {
+            grid-area: login-button;
+                align-self: center;
+                justify-self: center;
+                height: 8vh;
+                width: 10vw;
+              //  border-radius: 50px;
+                background-color: var(--be-accent-default);
+                color: white;
+                font-size: 1.3vw;
+                font-weight: 500;
+                border:0px;
+        }
+        button:hover {
+            cursor: pointer;
+        }
+        
+        
+    }
+    .content {
+        &.home {
+            background-color: var(--be-background);
+            grid-area: content;
+            display: grid;
+            grid-template-rows: 120vh 100vh 170vh;
+            grid-template-columns: 1fr;
+            grid-template-areas:
+            "reel"
+            "features"
+            "teasers";
+            
+            .reel {
+                grid-area: reel;
+
+               background-image: url("../assets//images/reel.jpg");
+                
+                box-shadow: inset 0 0 0 1000px rgba(0,0,0,.2);
+             background-color: rgb(248, 247, 216);
+            display: grid;
+            justify-content: center;     
+            align-content: center;         
+            grid-template-rows: 25vh 5vh 45vh;                
+            grid-template-columns: 1fr 3fr 1fr;
+            grid-template-areas: 
+            ". heading . "
+            ". sub-heading ."
+            ". button . ";
+            
+            h1 {
+                grid-area: heading;
+                align-self: center;
+                justify-self: center;
+                font-size: 5vw;
+                
+            }
+            h2 {
+            grid-area: sub-heading;
+            align-self: center;
+            justify-self: center;
+            font-size: 4vh;
+            font-weight: 300;    
+            text-align: center;
+                
+            }
+            button {
+                grid-area: button;
+                align-self: center;
+                justify-self: center;
+                height: 10vh;
+                width: 20vw;
+                border-radius: 50px;
+                background-color: var(--be-accent-default);
+                color: white;
+                font-size: 20px;
+                border:0px;
+
+            button:hover{
+                cursor: pointer;
+            }
+            }
+            }
+            .features{
+                
+                grid-area: features;
+                
+                display: grid;
+                grid-template-columns: 1fr 5fr 5fr 5fr 1fr;
+                grid-column-gap: 2vw;
+                grid-template-rows: 1fr;
+                grid-template-areas:
+                ". high-quality users discover .";                    
+                align-items: center;
+                
+                article {
+                    figure{ 
+                        display: grid;
+                        justify-content: center;}
+                    figcaption{ text-align: center;}                    
+                }
+                
+                .high-quality {grid-area: high-quality;}
+                .users{ grid-area: users;}
+                .discover { grid-area: discover;}
+                svg {height: 15vh;}
+                
+            }
+            .teasers {
+                grid-area: teasers;
+                
+                grid-template-rows: 1fr 1fr;
+                display: grid;
+                grid-template-rows: 80vh 80vh;
+                grid-template-areas:
+                "teaser_freedom"
+                "teaser_uncommit";
+            .teaser_freedom {
+                grid-area: teaser_freedom;
+                display: grid;
+                grid-template-columns: 1fr 7fr 7fr 1fr;
+                grid-column-gap: 4vw;
+                justify-content: center;
+                align-content: center;
+                grid-template-areas:
+                ". teaser-freedom-txt freedom-img .";
+                
+                article {
+                    grid-area: teaser-freedom-txt;
+                    
+                    display: grid;
+                    
+                    align-items: start;
+                    grid-template-rows: 10% 40% 10%; 
+                    grid-row-gap: 2vh;
+                    h5 {font-size: 1.3vw; text-transform: uppercase;  font-weight: 200  }
+                    h2 {font-size: 3vw;   font-weight: 500 }
+                    h3{ font-size: 1.5vw; font-weight: 300 }
+                }
+                
+                
+                img { grid-area: freedom-img;
+                    @extend .controlWidth }
+                
+                
+            } 
+            .teaser_uncommit {
+                grid-area: teaser_uncommit;
+                display: grid;
+                grid-template-columns: 1fr 7fr 7fr 1fr;
+                grid-column-gap: 4vw;
+                justify-content: center;
+                align-content: center;
+                grid-template-areas:
+                ". uncommit-img uncommit-txt .";
+            
+                article {
+                    grid-area: uncommit-txt;
+                  
+                    display: grid;
+                    align-items: start;
+                    grid-template-rows: 10% 40% 10%; 
+                    grid-row-gap: 2vh;
+                    h5 {font-size: 1.3vw; text-transform: uppercase;  font-weight: 200  }
+                    h2 {font-size: 3vw;   font-weight: 500 }
+                    h3{ font-size: 1.5vw; font-weight: 300 }
+                }
+                img {
+                    grid-area: uncommit-img;
+                    @extend .controlWidth
+                }
+            }
+            }
+            
+                
+                
+            }
+        }
+    .footer {
+       
+        
+        grid-area: footer;
+        display: grid;
+        grid-template-columns: 5% 30% 60% 5%;
+        grid-template-rows: 1fr;
+        grid-template-areas: 
+        ". footer-title footer-list .";
+        .footer-title {
+            grid-area: footer-title;
+            display: grid;
+            grid-template-rows: 5vh 10vh 10vh;
+            grid-template-areas: 
+            ". "
+            "footer-heading" 
+            "footer-info";
+            h1 {
+              grid-area: footer-heading;
+              font-size: 1.9vw;
+              
+            }
+            h2 {
+                grid-area: footer-info;
+                font-size: 1.5vw;
+                font-weight: 400;
+            }
+        }
+        .footer-list {
+            grid-area: footer-list;
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            grid-template-rows: 1fr;
+            grid-template-areas:
+            "explore-li genre-li pages-li";
+            ul:nth-child(1) {
+                list-style: none;
+                grid-area: explore-li;
+               
+                display: grid;
+                align-content: start;
+                grid-row-gap: 1.5vh;
+                li {  a { text-decoration: none; } }  
+            }
+            ul:nth-child(2) {
+                list-style: none;
+                display: grid;
+                grid-area: genre-li;
+                align-content: start;
+                grid-row-gap: 1.5vh;
+                li {  a { text-decoration: none; } } 
+            }
+            ul:nth-child(3) {
+                list-style: none;
+                grid-area: pages-li;
+                grid-row-gap: 1.5vh;
+                display: grid;
+                align-content: start;
+                
+                li {  a { text-decoration: none; } } 
+            }
+            
+           
+            
+            
+        }
+        
+    }
+       
+    }   
